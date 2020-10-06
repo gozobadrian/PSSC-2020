@@ -1,0 +1,21 @@
+Contexte:
+- utilizator
+- autentificare
+- notificare
+- intrebare postata
+- intrebare raspunsa
+- raspuns postat
+- reputatie
+
+Evenimente:
+- cerere login
+- cerere logout
+- cerere autentificare
+- creare intrebare
+- postare raspuns
+- votare raspuns
+- alegere raspuns
+- instiintare raspuns primit
+- instiintare raspuns corect
+- instiintare modificare reputatie
+- afisare notificare
