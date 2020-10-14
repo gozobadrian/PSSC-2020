@@ -1,0 +1,33 @@
+- Bounded context: "Question context"
+    - Workflow: "Post question"
+        - Triggered by: "Post question request received"
+        - Input: "Question form" (title, body, tags)
+        - Output: "Question posted" event
+        - Side effects: Notification is sent to the user
+
+- Workflow: "Post question"
+    - Input: "Question form"
+    - Output: "Question posted" event or incomplete question error
+        // step 1
+        Do validate question form
+        If form is incomplete then
+            stop
+        // step 2
+        Ask for question posting confirmation
+        // step 3
+        If user did not confirm then
+            stop
+        // step 4
+        return "Question posted" event
+
+    - Substep: "Validate question form"
+        - Input: "Unvalidated question form"
+        - Output: "Validated question form"
+        - Dependencies: title validator, body validator
+
+    - Validate the title
+    - Validate the body
+    - Check that the question was not posted before
+    - If all validations passed then
+        - return validated question form
+    - Else return validation error
